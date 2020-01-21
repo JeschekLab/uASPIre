@@ -6,7 +6,7 @@ This repository contains the data of _**u**ltradeep **A**cquisition of **S**eque
 
 1. [**NGS_data_analysis**](NGS_data_analysis) contains the scripts for raw NGS data analysis that was used to extract the processed data, as presented below. 
 
-2. [**Processed_NGS_Data**](Processed_NGS_Data) contains the processed NGS data that were used by our machine learning model (https://github.com/BorgwardtLab/SAPIENs) and other analyses. The data is structured in tab delimited files with header line containing the time points in minutes and the calculated integral of flipping profiles (_IFP480_). The data of the biological replicates (_uASPIre_RBS_300k_r2.txt.gz_ and _...r3_) also contain a column with the IFP value normalized to replicate 1 (_IFP480_fittor1_). The column _total_reads_ shows the sum of all flipped and non-flipped reads over all time points per variant.
+2. [**RBS_data**](RBS_data) contains the processed NGS data that were used by our machine learning model (https://github.com/BorgwardtLab/SAPIENs) and other analyses. The data is structured in tab delimited files with header line containing the time points in minutes and the calculated integral of flipping profiles (_IFP480_). The data of the biological replicates (_uASPIre_RBS_300k_r2.txt.gz_ and _...r3_) also contain a column with the IFP value normalized to replicate 1 (_IFP480_fittor1_). The column _total_reads_ shows the sum of all flipped and non-flipped reads over all time points per variant.
 
 3. [**uASPIre_RBS_example**](uASPIre_RBS_example) contains some raw and compressed exemplary NGS data.
 
