@@ -1,4 +1,4 @@
-# uASPIRE - raw NGS data analysis
+# uASPIre - raw NGS data analysis
 
 Dear user of uASPIre,
 
