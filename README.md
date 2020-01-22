@@ -17,7 +17,7 @@ The code requires the following tools and packages:
 + python 3 including the packages _biopython (Bio.Seq)_, _numpy_, _os_, _sys_, _logging_, _datetime_ and _pandas_
 
 ## Date
-November 2019
+January 2020
 
 ## Contact
 simon.hoellerer@bsse.ethz.ch
