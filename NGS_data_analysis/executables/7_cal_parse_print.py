@@ -42,8 +42,8 @@ def reverse_complement(dna):
 
 
 # get environment variables
-PATH = get_environ_var("OUT_PATH")
-RESULT_PATH = get_environ_var("RESULT_PATH")
+PATH = get_environ_var("OUT_DIR")
+RESULT_DIR = get_environ_var("RESULT_DIR")
 PROJECT_NAME = get_environ_var("PROJECT_NAME")
 SAMPLES_NUMBER = int(get_environ_var("SAMPLES_NUMBER"))
 SAMPLES_TIME_POINTS = list(get_environ_var_array("SAMPLES_TIME_POINTS"))
@@ -81,10 +81,6 @@ print("Merge and replace NAs")
 # merge and replace "NA" with 0
 mdataframe_nf = RBS_S_nf[1]
 mdataframe_ff = RBS_S_ff[1]
-print("mdataframe_nf")
-print(mdataframe_nf)
-print("mdataframe_ff")
-print(mdataframe_ff)
 
 for idx in range(2, SAMPLES_NUMBER + 1):
     mdataframe_nf = mdataframe_nf.merge(RBS_S_nf[idx], left_on='RBS', right_on='RBS', how='outer') # <----------------- ERROR, an outer merge nullifies the cutoff_per_time_point and makes an OR cutoff_per_time_point instead of AND; better: array, minimum per row
@@ -184,9 +180,9 @@ Fdata['RBS'] = [reverse_complement(sequence) for sequence in Fdata['RBS'].values
 Fdata_nf['RBS'] = [reverse_complement(sequence) for sequence in Fdata_nf['RBS'].values]
 Fdata_ff['RBS'] = [reverse_complement(sequence) for sequence in Fdata_ff['RBS'].values]
 
-Fdata.to_csv(os.path.join(RESULT_PATH, "{0}_unsorted_fraction.txt".format(PROJECT_NAME)), sep="\t", index=False)
-Fdata_nf.to_csv(os.path.join(RESULT_PATH, "{0}_unsorted_reads_non-flipped.txt".format(PROJECT_NAME)), sep="\t", index=False) # <----------------- print as integer without '.0'
-Fdata_ff.to_csv(os.path.join(RESULT_PATH, "{0}_unsorted_reads_flipped.txt".format(PROJECT_NAME)), sep="\t", index=False) # <----------------- print as integer without '.0'
+Fdata.to_csv(os.path.join(RESULT_DIR, "{0}_unsorted_fraction.txt".format(PROJECT_NAME)), sep="\t", index=False)
+Fdata_nf.to_csv(os.path.join(RESULT_DIR, "{0}_unsorted_reads_non-flipped.txt".format(PROJECT_NAME)), sep="\t", index=False) # <----------------- print as integer without '.0'
+Fdata_ff.to_csv(os.path.join(RESULT_DIR, "{0}_unsorted_reads_flipped.txt".format(PROJECT_NAME)), sep="\t", index=False) # <----------------- print as integer without '.0'
 
 
 print("Data analysis successfully executed!")

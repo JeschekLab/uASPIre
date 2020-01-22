@@ -6,7 +6,7 @@
 # Simon Höllerer, ETH Zürich, D-BSSE, BPL, Basel, Switzerland                 #
 # E-mail: simon.hoellerer@bsse.ethz.ch                                        #
 # Authors: Simon Höllerer, Laetitia Papaxanthos, Anja Gumpinger               #
-# Date: November, 2019                                                        #
+# Date: January, 2020                                                         #
 ###############################################################################
 
 # DESCRIPTION: This script is the overall executable bash script that executes
@@ -33,11 +33,11 @@ set +a
 
 
 # create folders and check integrity
-if [ ! -d "${OUT_PATH}" ]; then
-  mkdir -p "${OUT_PATH}"
-  if [ ! -d "${OUT_PATH}" ]; then
+if [ ! -d "${OUT_DIR}" ]; then
+  mkdir -p "${OUT_DIR}"
+  if [ ! -d "${OUT_DIR}" ]; then
     printf "ERROR: output directory does not exist or cannot be created!\n"
-    printf "Directory = ${OUT_PATH}\nExiting the script.\n"
+    printf "Directory = ${OUT_DIR}\nExiting the script.\n"
     exit
   fi
   printf "Output directory successfully created. Continuing ...\n"
@@ -45,11 +45,11 @@ else
   printf "Output directory already exists. Continuing ...\n"
 fi
 
-if [ ! -d "${RESULT_PATH}" ]; then
-  mkdir -p "${RESULT_PATH}"
-  if [ ! -d "${RESULT_PATH}" ]; then
+if [ ! -d "${RESULT_DIR}" ]; then
+  mkdir -p "${RESULT_DIR}"
+  if [ ! -d "${RESULT_DIR}" ]; then
     printf "ERROR: output directory does not exist or cannot be created!\n"
-    printf "Directory = ${RESULT_PATH}\nExiting the script.\n"
+    printf "Directory = ${RESULT_DIR}\nExiting the script.\n"
     exit
   fi
   printf "Result directory successfully created. Continuing ...\n"
@@ -57,11 +57,11 @@ else
   printf "Result directory already exists. Continuing ...\n"
 fi
 
-if [ ! -d "${LOG_PATH}" ]; then
-  mkdir -p "${LOG_PATH}"
-  if [ ! -d "${LOG_PATH}" ]; then
+if [ ! -d "${LOG_DIR}" ]; then
+  mkdir -p "${LOG_DIR}"
+  if [ ! -d "${LOG_DIR}" ]; then
     printf "ERROR: output directory does not exist or cannot be created!\n"
-    printf "Directory = ${LOG_PATH}\nExiting the script.\n"
+    printf "Directory = ${LOG_DIR}\nExiting the script.\n"
     exit
   fi
   printf "Log directory successfully created. Continuing ...\n"
@@ -71,7 +71,7 @@ fi
 
 # create a logfile with date and time and export it
 NOW=$(date +"%F_%H-%M")
-export LOGFILE="${LOG_PATH}/log-$NOW.log"
+export LOGFILE="${LOG_DIR}/log-$NOW.log"
 touch "${LOGFILE}"
 
 # write header with parameters to log file
@@ -80,11 +80,11 @@ printf "%s\n" \
   "Logfile of ${PROJECT_NAME}" \
   "########################" \
   "Date and time: $(timestamp)" \
-  "Root path: ${ROOT_PATH}" \
+  "Root path: ${ROOT_DIR}" \
   "Raw data file R1: ${IN_FILE_R1}" \
   "Raw data file R2: ${IN_FILE_R2}" \
-  "Output path: ${OUT_PATH}" \
-  "Result path: ${RESULT_PATH}" \
+  "Output path: ${OUT_DIR}" \
+  "Result path: ${RESULT_DIR}" \
   "Name of logfile: ${LOGFILE}" \
   "Path to agrep executable: ${AGREP}" \
   "Path to tre-agrep executable: ${TRE}" \

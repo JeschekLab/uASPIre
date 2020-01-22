@@ -48,7 +48,7 @@ TASK = sys.argv[1]
 # TASK = "01"
 
 # get environment variables
-PATH = os.environ["OUT_PATH"]
+PATH = os.environ["OUT_DIR"]
 SAMPLES_BC = list(get_environ_var_array("SAMPLES_BC").astype(int))
 BARCODES_LEN = int(get_environ_var("BARCODES_NUMBER"))
 

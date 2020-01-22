@@ -38,7 +38,7 @@ print("{0}: Get constant sequence (t_{1})".format(
     datetime.now().strftime("%Y-%m-%d %H:%M:%S"), TASK))
 
 # get PATH, RBS length and offset from environment
-PATH = os.environ["OUT_PATH"]
+PATH = os.environ["OUT_DIR"]
 RBS_LENGTH = int(os.environ["RBS_LENGTH"])
 RBS_OFFSET = int(os.environ["RBS_OFFSET"])
 

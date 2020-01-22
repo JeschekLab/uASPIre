@@ -37,28 +37,28 @@ fi
 # write all lines with less than 6 consecutive Ns in reverse read to new file
 # as quality control
 printf "$(timestamp): parallel copy <6 N in reverse read (t_${TASK})\n"
-awk "NR%$PARALLEL_TASKS==$STARTING_LANE" "${OUT_PATH}/data.fastq" | awk '$2 !~ /NNNNNN/' > "${OUT_PATH}/data_QC_${TASK}.tmp"
+awk "NR%$PARALLEL_TASKS==$STARTING_LANE" "${OUT_DIR}/data.fastq" | awk '$2 !~ /NNNNNN/' > "${OUT_DIR}/data_QC_${TASK}.tmp"
 
 
 # write only the reverse read to new file to get the RBS sequence
 printf "$(timestamp): copy only 2nd column (t_${TASK})\n"
-awk '{print $2}' "${OUT_PATH}/data_QC_${TASK}.tmp" > "${OUT_PATH}/data_R2_${TASK}.tmp"
+awk '{print $2}' "${OUT_DIR}/data_QC_${TASK}.tmp" > "${OUT_DIR}/data_R2_${TASK}.tmp"
 
 
 # write first 17 bases starting on position 7 from reverse read to new file to
 # check for the constant sequence
 printf "$(timestamp): copy first bases in reverse read (t_${TASK})\n"
-awk '{print substr($2,7,17)}' "${OUT_PATH}/data_QC_${TASK}.tmp" > "${OUT_PATH}/data_R2-7-17_${TASK}.tmp"
+awk '{print substr($2,7,17)}' "${OUT_DIR}/data_QC_${TASK}.tmp" > "${OUT_DIR}/data_R2-7-17_${TASK}.tmp"
 
 
 # write all lines with constant region to new file
 printf "$(timestamp): get index of lines with constant region (t_${TASK})\n"
-${TRE} -${MM_CONSTANT} -n --show-position ${SEQ_CONSTANT} "${OUT_PATH}/data_R2-7-17_${TASK}.tmp" > "${OUT_PATH}/data_R2-7-17_C-pos_${TASK}.tmp"
+${TRE} -${MM_CONSTANT} -n --show-position ${SEQ_CONSTANT} "${OUT_DIR}/data_R2-7-17_${TASK}.tmp" > "${OUT_DIR}/data_R2-7-17_C-pos_${TASK}.tmp"
 
 
 # count lines in 'data_R2-7-17_C-pos_${TASK}.tmp'
 printf "$(timestamp): Counting lines (t_${TASK})\n"
-NUM_LINES=$(wc -l "${OUT_PATH}/data_R2-7-17_C-pos_${TASK}.tmp" | awk '{print $1}')
+NUM_LINES=$(wc -l "${OUT_DIR}/data_R2-7-17_C-pos_${TASK}.tmp" | awk '{print $1}')
 printf "$(timestamp): Total number of reads with constant region in data_R2-7-17_C-pos_${TASK}.tmp: ${NUM_LINES}\n" | tee -a "${LOGFILE}"
 
 

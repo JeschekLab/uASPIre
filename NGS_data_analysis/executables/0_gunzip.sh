@@ -21,15 +21,14 @@ source "${CONFIG}"
 
 # write the sequence of the forward and reverse read into 'data.fastq' (without quality)
 printf "$(timestamp): unpacking raw data\n"
-paste <(awk 'NR%4==2' <(gzip -dc ${IN_FILE_R1})) <(awk 'NR%4==2' <(gzip -dc ${IN_FILE_R2})) > "${OUT_PATH}/data.fastq"
+paste <(awk 'NR%4==2' <(gzip -dc ${IN_FILE_R1})) <(awk 'NR%4==2' <(gzip -dc ${IN_FILE_R2})) > "${OUT_DIR}/data.fastq"
 printf "$(timestamp): Input files extracted and 'data.fastq' written.\n"
 
 
 # count lines in 'data_seq.fast'
 printf "$(timestamp): counting lines in 'data.fastq'\n"
-NUM_LINES=$(wc -l ${OUT_PATH}/data.fastq | awk '{print $1}')
-printf "$(timestamp): Total number of reads in ${OUT_PATH}/data.fastq: ${NUM_LINES}\n" | tee -a "$LOGFILE"
+NUM_LINES=$(wc -l ${OUT_DIR}/data.fastq | awk '{print $1}')
+printf "$(timestamp): Total number of reads in ${OUT_DIR}/data.fastq: ${NUM_LINES}\n" | tee -a "$LOGFILE"
 
-
-# print end statement
-printf "$(timestamp): script ${SCRIPT_0}.sh successfully executed!\n"
+# done!
+printf "$(timestamp): done (t_${TASK})!\n"

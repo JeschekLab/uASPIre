@@ -26,14 +26,14 @@ TASK=$1
 # write non-flipped
 for file in $(eval echo "{1..$SAMPLES_NUMBER}"); do
   printf "$(timestamp): writing non-flipped S${file} (t_${TASK})\n"
-  awk '{print $3}' "${OUT_PATH}/data_S${file}_nf_${TASK}.tmp" > "${OUT_PATH}/RBS_S${file}_nf_${TASK}.tmp"
+  awk '{print $3}' "${OUT_DIR}/data_S${file}_nf_${TASK}.tmp" > "${OUT_DIR}/RBS_S${file}_nf_${TASK}.tmp"
 done
 
 
 # write flipped
 for file in $(eval echo "{1..$SAMPLES_NUMBER}"); do
   printf "$(timestamp): writing flipped S${file} (t_${TASK})\n"
-  awk '{print $3}' "${OUT_PATH}/data_S${file}_ff_${TASK}.tmp" > "${OUT_PATH}/RBS_S${file}_ff_${TASK}.tmp"
+  awk '{print $3}' "${OUT_DIR}/data_S${file}_ff_${TASK}.tmp" > "${OUT_DIR}/RBS_S${file}_ff_${TASK}.tmp"
 done
 
 
