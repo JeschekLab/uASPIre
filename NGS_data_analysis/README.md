@@ -13,7 +13,7 @@ The code requires the following tools and packages:
 ## Execution
 To execute the script, specify all necessary options in the config file following the prescribed formatting. Then run the program with
 
-	$ /path-to-scripts/main_process_raw_NGS_data.sh /path-to-config/config.cfg
+	$ /path/to/script/main_process_raw_NGS_data.sh /path/to/config/config.cfg
 
 The script generates many temporary files in the _output_ folder and writes the final results into the _results_ folder. The _output_ folder can be deleted once the program has successfully been excuted.
 
@@ -22,7 +22,7 @@ Feel free to try the script on the provided sample NGS raw data [**uASPIre_RBS_e
 In case of questions, problems, or comments, feel free to contact me.
 
 ## Date
-November 2019
+January 2020
 
 ## Contact
 simon.hoellerer@bsse.ethz.ch
