@@ -11,7 +11,7 @@ This repository contains the data of _**u**ltradeep **A**cquisition of **S**eque
 3. [**uASPIre_RBS_example**](uASPIre_RBS_example) contains some raw and compressed exemplary NGS data.
 
 ## Hardware requirements
-This code package requires a Unix system with >10 GB RAM.
+This code package requires a Unix system with >10 GB RAM and optimally multiple cores.
 
 ## Software requirements
 The code runs on Unix systems only, and was developed and tested on Red Hat Enterprise Linux Server release 6.9 (Santiago).
