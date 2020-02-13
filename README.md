@@ -23,6 +23,9 @@ This code requires the following UNIX tools and packages:
 + TRE agrep 0.8.0 (e.g. available via https://wiki.ubuntuusers.de/tre-agrep/)
 + python 3 including the packages _biopython (Bio.Seq)_, _numpy_, _os_, _sys_, _logging_, _datetime_ and _pandas_
 
+## Functionality
+The algorithms for processing of NGS data for this project were written in bash and python. Briefly, forward and reverse reads retrieved from fastq files were paired and all reads with more than six consecutive unidentified nucleotides were removed. Afterwards, target fragments were selected by a 10-bp constant region (GAGCTCGCAT, max. 3 mismatches) and sequences from different samples were deconvoluted by their unique combination of two 6-bp indices (Supplementary Tab. 3). Next, the discriminator state was determined by searching for the presence of an attP or attR site corresponding to the sequences GGGTTTGTACCGTACAC or GCCCGGATGATCCTGAC, respectively (max. 3 mismatches, differential bases highlighted in bold). RBS sequences were determined by retrieving the 17 nucleotides upstream of the bxb1 start codon. Finally, variants with mismatches in the bxb1 CDS in more than 8% of reads were removed to exclude off-target mutations (in a separate step).
+
 ## Date
 January 2020
 
