@@ -11,7 +11,7 @@ To execute the script, specify all necessary options in the config file followin
 
 The script generates many temporary files in the _output_ folder and writes the final results into the _results_ folder. The _output_ folder can be deleted once the program has successfully been excuted.
 
-Feel free to try the script on the provided sample NGS raw data [**uASPIre_example**](uASPIre_example) and the provided sample config. The expected output is in the 'output' folder. Runtime should be ~10 s for this dummy set and up to 2 h for a full NGS data (400 mio reads) set running on 12 cores.
+Feel free to try the script on the provided sample NGS raw data ('uASPIre_example') and the provided sample config. The expected output is in the 'output' folder. Runtime should be ~10 s for this dummy set and up to 2 h for a full NGS data (400 mio reads) set running on 12 cores.
 
 NGS data in the manuscript was analyzed using the provided configs in the [**configs_used_in_manuscript**](configs_used_in_manuscript) folder.
 
