@@ -10,8 +10,15 @@ This repository contains the data of _**u**ltradeep **A**cquisition of **S**eque
 
 3. [**uASPIre_RBS_example**](uASPIre_RBS_example) contains some raw and compressed exemplary NGS data.
 
-## Dependencies
-The code requires the following tools and packages:
+## Hardware requirements
+This code package requires a Unix system with >10 GB RAM.
+
+## Software requirements
+The code runs on Unix systems only, and was developed and tested on Red Hat Enterprise Linux Server release 6.9 (Santiago).
+
+## Software dependencies
+This code requires the following UNIX tools and packages:
+
 + AGREP 3.41.5 (e.g. available via https://github.com/Wikinaut/agrep)
 + TRE agrep 0.8.0 (e.g. available via https://wiki.ubuntuusers.de/tre-agrep/)
 + python 3 including the packages _biopython (Bio.Seq)_, _numpy_, _os_, _sys_, _logging_, _datetime_ and _pandas_
