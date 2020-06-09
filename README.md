@@ -16,6 +16,9 @@ This code package requires a Unix system with >10 GB RAM and optimally multiple 
 ## Software requirements
 The code runs on Unix systems only, and was developed and tested on Red Hat Enterprise Linux Server release 6.9 (Santiago).
 
+## Installation
+No installation is needed, the code can be run as is.
+
 ## Software dependencies
 This code requires the following UNIX tools and packages:
 
