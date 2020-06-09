@@ -1,6 +1,6 @@
 # uASPIre
 
-This repository contains the data of _**u**ltradeep **A**cquisition of **S**equence-**P**henotype **I**nter**re**lations_ (uASPIre) and the code for processing raw NGS data as presented in the submitted manuscript of "Large-Scale Sequence-Function Mapping and Deep Learning for Prediction of Biological Properties".
+This repository contains the data of _**u**ltradeep **A**cquisition of **S**equence-**P**henotype **I**nter**re**lations_ (uASPIre) and the code for processing raw NGS data as presented in the submitted manuscript "Large-scale DNA-based phenotypic recording and deep learning enable highly accurate sequence-function mapping".
 
 ## Organization of the repository
 
