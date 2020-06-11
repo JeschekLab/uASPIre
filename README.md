@@ -27,7 +27,17 @@ This code requires the following UNIX tools and packages:
 + python 3 including the packages _biopython (Bio.Seq)_, _numpy_, _os_, _sys_, _logging_, _datetime_ and _pandas_
 
 ## Functionality
-"The algorithms for processing of NGS data for this project were written in bash and python. Briefly, forward and reverse reads retrieved from fastq files were paired and all reads with more than six consecutive unidentified nucleotides were removed. Afterwards, target fragments were selected by a 10-bp constant region (GAGCTCGCAT, max. 3 mismatches) and sequences from different samples were deconvoluted by their unique combination of two 6-bp indices (Supplementary Tab. 3). Next, the discriminator state was determined by searching for the presence of an attP or attR site corresponding to the sequences GGGTTTGTACCGTACAC or GCCCGGATGATCCTGAC, respectively (max. 3 mismatches). RBS sequences were determined by retrieving the 17 nucleotides upstream of the bxb1 start codon." (from Höllerer _et al_., 2020) 
+"The algorithms for processing of NGS data for this project were written in bash and python. Briefly, forward and reverse reads retrieved from fastq files were paired and all reads with more than six consecutive unidentified nucleotides were removed. Afterwards, target fragments were selected by a 10-bp constant region (GAGCTCGCAT, max. 3 mismatches) and sequences from different samples were deconvoluted by their unique combination of two 6-bp indices (Supplementary Tab. 3). Next, the discriminator state was determined by searching for the presence of an attP or attR site corresponding to the sequences GGGTTTGTACCGTACAC or GCCCGGATGATCCTGAC, respectively (max. 3 mismatches). RBS sequences were determined by retrieving the 17 nucleotides upstream of the bxb1 start codon." (from Höllerer _et al_., 2020)
+
+
+## License
+Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)
+(c) Simon Höllerer, 2020, ETH Zurich
+
+https://creativecommons.org/licenses/by-nc-nd/4.0/legalcode
+
+This is valid for the data and the code shared in this repository.
+
 
 ## Date
 June 2020
